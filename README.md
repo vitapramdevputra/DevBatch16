@@ -1,3 +1,8 @@
+# Batch 16 Developer 1 project
+
+We have all classes, trigger, code, etc that we learned in last 10 weeks.
+All the hard work is here.
+
 # Salesforce DX Project: Next Steps
 
 Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
