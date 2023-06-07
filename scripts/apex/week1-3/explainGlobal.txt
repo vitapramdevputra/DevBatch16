@@ -1,0 +1,20 @@
+Base CRM app
+    - Global class: integrating salesforce with external system using API (callouts)
+    - 30 classes. Public.
+
+CPQ app
+    - some internal logic (public class)
+    - (public) integerting with external system. 
+
+
+Billing app
+
+
+order management app
+
+
+subscription management app
+
+
+//NOTE: we always use public.
+//if we use global in our app, and we want to public to app exchange 

@@ -1,0 +1,78 @@
+Async Apex
+    - Running behind the scenes.
+    - 4 types.
+        - future, batch, queueable, schedulable
+
+Future
+    - @future -- annotate method with this annotation
+    - static. 
+    - void only (nothing returns)
+    - parameters? 
+        - no sObject. No list<sObject>
+        - only primitive, or collection of primitive datatype
+        how many parameters we can have in future method? (trick)
+            - any number
+            - ideal is less than 6 (for any method)
+    - cannot call future method from future method (directly or indirectly)
+        - inserting department
+            - department Trigger
+                - department handler future method
+                    -insert employee
+                        - Employee trigger execution
+                            - calling another future method
+
+Test Future
+    - startTest and StopTest are mandatory.
+
+Interface
+    - What? methods in interface does not have any body (just method signature)
+    - Method cannot be implemented in interface.
+    - Class implements interfaces
+        - the implemntor class MUST implement all the methods declared in interface.
+
+Batch apex:
+    - Why? why?
+        - want to update huge number of records we use batch.
+        - not only records, it can be any other limits
+            - ex: 10k records to update max. 10 sec CPU time. 6 MB heap size
+            - 50k update
+                - write a batch. 5k record at once. 10 times batch execution.
+            - 1000 records -> it is consuming 3 mins
+                - Process 200 records at a time.
+    - Database.batchabe is interface
+            ex 
+                 - 1000 records -> it is consuming 3 mins
+                - Process 200 records at a time.
+        - start
+            - run only when batch starts. we do soql query here.
+        - execute
+            - 5 times execution. For each 200 records execute will execute.
+                - if one of them fails, others can be successful.
+                - new gov limits for each execution.
+        - finish
+            - executes at the end. Only Once.
+    - database.stateful
+        - retains value of all execution throughout the batch execution.
+
+Test class for Batch Jobs
+    - prepare data
+    - execute batch in between start test and stop test for sure
+    - tiny thing to take care of: we should NOT divide data when write test for batch.
+
+Queueable
+    - similar to future, a little advanced version
+        - we write it like batch
+    - we can chain jobs.
+    - we can get job id to monitor progress
+    - we can pass all datatypes, including sObjects.
+    - queueable is interface
+        - execute method is mandatory
+
+MixedDml Error
+    - Setup sObject
+        - user object, profile, permission set
+    - non setup objects
+        - account, contact, employee etc
+    - update user record and account record in one transaction. It will give MixedDML Error
+    - to do it in a separate transaction. the quickest is future method.
+    
