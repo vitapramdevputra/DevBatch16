@@ -7,9 +7,16 @@ public class SPTriggerHandler {
             //create list of ticket so create bulk records
             List<Salesforce_Ticket__c> listST = new List<Salesforce_Ticket__c>();
 
+            //how to access hierarchy custom setting org level default value in apex?
+            DefaultTicketInfo__c dt = DefaultTicketInfo__c.getOrgDefaults();
+            system.debug('dt ==> ' + dt);
+
             for (Salesforce_Project__c newSP : spTriggerNew) {
                 Salesforce_Ticket__c st = new Salesforce_Ticket__c();
-                st.Subject__c = 'Default ST';
+                //we should be able to update the default subject, description, and priority without changing code.
+                st.Subject__c = dt.subject__c;
+                st.Description__c = dt.description__c;
+                st.Priority__c = dt.priority__c;
                 st.Salesforce_Project__c = newSP.Id;//relationship field
                 listST.add(st);
             }
