@@ -1,0 +1,33 @@
+<template>
+    <lightning-card title="Create Account" icon-name="standard:account">
+        <div class="slds-p-horizontal_small">
+            <lightning-layout multiple-rows>
+                <lightning-layout-item size="6" padding="around-small">
+                    <lightning-input type="text" variant="label-stacked" label="Account Name" value={accountName}
+                        required message-when-value-missing="Account name is required field!"
+                        onchange={handleAccountNameChange}>
+                    </lightning-input>
+                </lightning-layout-item>
+                <lightning-layout-item size="6" padding="around-small">
+                    <lightning-input type="date" variant="standard" label="SLA Expiration Date"
+                        onchange={handleExpirationDateChange} value={expiryDate}>
+                    </lightning-input>
+                </lightning-layout-item>
+                <lightning-layout-item size="6" padding="around-small">
+                    <lightning-input type="number" variant="standard" label="Number of Employees"
+                        onchange={handleNumberOfEmployeesChange} value={emp}>
+                    </lightning-input>
+                </lightning-layout-item>
+                <lightning-layout-item size="6" padding="around-small">
+                    <lightning-input type="number" variant="standard" label="Annual Revenue" formatter="currency"
+                        onchange={handleAnnualRevenueChange} value={annualRevenue}>
+                    </lightning-input>
+                </lightning-layout-item>
+                <lightning-layout-item size="12" padding="around-small">
+                    <lightning-button variant="brand" label="Create" onclick={handleCreate}>
+                    </lightning-button>
+                </lightning-layout-item>
+            </lightning-layout>
+        </div>
+    </lightning-card>
+</template>

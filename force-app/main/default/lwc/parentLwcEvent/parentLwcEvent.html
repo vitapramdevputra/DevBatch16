@@ -1,0 +1,13 @@
+<template>
+    <lightning-card title="Parent parent" icon-name="standard:account" variant="base">
+     <div>
+        Child button clicked count: {count}
+        <br>
+        Name: {name}
+     </div>
+      <div>
+        <c-child-lwc-event onchildbuttonclick={handleChildButtonClick} onhellohello={handleHelloClick}></c-child-lwc-event>
+        
+      </div>
+    </lightning-card>
+</template>

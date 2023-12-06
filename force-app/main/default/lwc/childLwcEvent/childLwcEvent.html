@@ -1,0 +1,19 @@
+<template>
+    <lightning-card icon-name="standard:account" variant="base">
+      <div>
+        Number of times you clicked poor button: {count}
+        <lightning-input 
+          type="text"
+          label="Name"
+          onchange={handleNameChange}
+        ></lightning-input>
+      </div>
+        <div>
+        <lightning-button 
+          variant="brand"
+          label="Click me please" 
+          onclick={handleClick} 
+        ></lightning-button>
+      </div>
+    </lightning-card>
+</template>

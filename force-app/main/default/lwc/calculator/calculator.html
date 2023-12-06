@@ -1,0 +1,62 @@
+<template>
+    <lightning-card title="Calculator">
+        <div class="slds-p-horizontal_small">
+            <lightning-layout multiple-rows="true">
+                <lightning-layout-item size="12">
+                    <lightning-input type="text" onchange={handleTextChange}></lightning-input>
+                </lightning-layout-item>
+                <lightning-layout-item size="3">
+                    <lightning-button label="7" onclick={handleNumberClick}></lightning-button>
+                </lightning-layout-item>
+                <lightning-layout-item size="3">
+                    <lightning-button label="8" onclick={handleNumberClick}></lightning-button>
+                </lightning-layout-item>
+                <lightning-layout-item size="3">
+                    <lightning-button label="9" onclick={handleNumberClick}></lightning-button>
+                </lightning-layout-item>
+                <lightning-layout-item size="3">
+                    <lightning-button label="/" onclick={handleOperationClick}></lightning-button>
+                </lightning-layout-item>
+                <lightning-layout-item size="3">
+                    <lightning-button label="4" onclick={handleNumberClick}></lightning-button>
+                </lightning-layout-item>
+                <lightning-layout-item size="3">
+                    <lightning-button label="5" onclick={handleNumberClick}></lightning-button>
+                </lightning-layout-item>
+                <lightning-layout-item size="3">
+                    <lightning-button label="6" onclick={handleNumberClick}></lightning-button>
+                </lightning-layout-item>
+                <lightning-layout-item size="3">
+                    <lightning-button label="x" onclick={handleOperationClick}></lightning-button>
+                </lightning-layout-item>
+                <lightning-layout-item size="3">
+                    <lightning-button label="1" onclick={handleNumberClick}></lightning-button>
+                </lightning-layout-item>
+                <lightning-layout-item size="3">
+                    <lightning-button label="2" onclick={handleNumberClick}></lightning-button>
+                </lightning-layout-item>
+                <lightning-layout-item size="3">
+                    <lightning-button label="3" onclick={handleNumberClick}></lightning-button>
+                </lightning-layout-item>
+                <lightning-layout-item size="3">
+                    <lightning-button label="-" onclick={handleOperationClick}></lightning-button>
+                </lightning-layout-item>
+                <lightning-layout-item size="3">
+                    <lightning-button label="." onclick={handleNumberClick}></lightning-button>
+                </lightning-layout-item>
+                <lightning-layout-item size="3">
+                    <lightning-button label="0" onclick={handleNumberClick}></lightning-button>
+                </lightning-layout-item>
+                <lightning-layout-item size="3">
+                    <lightning-button label="=" onclick={handleEqualClick}></lightning-button>
+                </lightning-layout-item>
+                <lightning-layout-item size="3">
+                    <lightning-button label="+" onclick={handleOperationClick}></lightning-button>
+                </lightning-layout-item>
+                <lightning-layout-item size="12">
+                    <lightning-button label="Clear" onclick={handleClearClick}></lightning-button>
+                </lightning-layout-item>
+            </lightning-layout>
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,24 @@
+<template>
+    <lightning-card title="Account Details" icon-name="standard:account">
+        <div class="slds-p-horizontal_small">
+            <lightning-layout multiple-rows>
+                <lightning-layout-item size="12" padding="around-small">
+                    <lightning-input type="text" label="Enter Account Id:" onchange={handleIdChange}></lightning-input>
+                    <lightning-button label="Fetch" onclick={handleClick}></lightning-button>
+                </lightning-layout-item>
+                <lightning-layout-item size="12" padding="around-small">
+                    <div>
+                        <template if:true={accountRecord}>
+                            <ul>
+                                <li>Account Id : {accountRecord.Id}</li>
+                                <li>Account Name : {accountRecord.Name}</li>
+                                <li>Account Number : {accountRecord.AccountNumber}</li>
+                                <li>Account Phone : {accountRecord.Phone}</li>
+                            </ul>
+                        </template>
+                    </div>
+                </lightning-layout-item>
+            </lightning-layout>
+        </div>
+    </lightning-card>
+</template>

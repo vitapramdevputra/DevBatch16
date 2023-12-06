@@ -1,0 +1,33 @@
+<template>
+    <lightning-card icon-name="standard:account" >
+     
+      <div class="slds-var-p-around_medium">
+       <template if:true={accountRecord.data}   >
+        <ul>
+            <li>
+                Account ID: 
+                {accountRecord.data.fields.Id.value}
+            </li>
+            <li>
+                Account Name:
+                {accountRecord.data.fields.Name.value}
+            </li>
+            <li>
+                Account Number:
+                {accountRecord.data.fields.AccountNumber.value}
+            </li>
+            <li>
+                Account Website:
+                {accountRecord.data.fields.Website.value}
+            </li>
+            <li>
+                Account Revenue:
+                {accountRecord.data.fields.AnnualRevenue.value}
+            </li>
+        </ul>
+        </template>
+        
+      </div>
+    </lightning-card>
+    
+</template>

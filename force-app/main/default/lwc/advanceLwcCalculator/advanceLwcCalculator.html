@@ -1,0 +1,16 @@
+<template>
+    <lightning-card title="Advance Calc" icon-name="custom:custom21">
+    
+        <div class="slds-p-horizontal_small">
+           <lightning-input type="number" label="First Num:" onchange={handleFirstNumberChange}></lightning-input>
+           <lightning-input type="number" label="Second Num:" onchange={handleSecondNumberChange}></lightning-input>
+            <!--add button-->
+            <!-- Neutral variant (default) -->
+            <lightning-button label="Add" title="Add" onclick={handleAdd}
+                class="slds-m-left_x-small"></lightning-button>
+
+           <p> {result} </p>
+        </div>
+    
+    </lightning-card>
+</template>

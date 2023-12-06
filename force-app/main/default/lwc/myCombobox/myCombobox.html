@@ -1,0 +1,15 @@
+<template>
+    <lightning-card title="My Combobox" icon-name="utility:down">
+        <div class="slds-p-horizontal_small">
+            <lightning-layout multiple-rows>
+                <lightning-layout-item size="12" padding="around-small">
+                    <lightning-combobox label="Class" value={value} options={options} onchange={handleValueChange}>
+                    </lightning-combobox>
+                </lightning-layout-item>
+                <lightning-layout-item size="12" padding="around-small">
+                    <p> The selected value is {value} </p>
+                </lightning-layout-item>
+            </lightning-layout>
+        </div>
+    </lightning-card>
+</template>

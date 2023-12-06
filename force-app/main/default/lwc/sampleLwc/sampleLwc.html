@@ -1,0 +1,29 @@
+<!-- sldsValidatorIgnore -->
+<template>
+    <lightning-card title="Sample LWC" icon-name="custom:custom9">
+        
+        <div class="slds-p-horizontal_small">
+            <p>Hello Everybody</p>
+            <p class="message">Name is {name}</p>
+
+            <lightning-input type="text" label="Name is needed" onchange={handleOnChange}></lightning-input>
+            <lightning-button 
+              variant="base"
+              label="Add Name" 
+              onclick={handleClick} 
+            ></lightning-button>
+
+            <div>
+                {allNames}
+            </div>
+            <div>
+                <lightning-datatable
+                  key-field="id"
+                  data={data}
+                  columns={columns}
+                ></lightning-datatable>
+            </div>
+        </div>
+
+    </lightning-card>
+</template>

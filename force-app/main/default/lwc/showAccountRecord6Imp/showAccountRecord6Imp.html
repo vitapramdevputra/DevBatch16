@@ -1,0 +1,30 @@
+<template>
+    <lightning-card title="Account Details" icon-name="standard:account">
+        <div class="slds-p-horizontal_small">
+            <lightning-layout multiple-rows>
+                <lightning-layout-item size="12" padding="around-small">
+                    <lightning-input type="text" label="Enter Account Type"
+                        onchange={handleTypeChange}></lightning-input>
+                </lightning-layout-item>
+                <lightning-layout-item size="12" padding="around-small">
+                    <lightning-button variant="brand-outline" icon-name="utility:switch" icon-position="right"
+                        label="Fetch" onclick={handleClick}>
+                    </lightning-button>
+                </lightning-layout-item>
+                <lightning-layout-item size="12" padding="around-small">
+                    <template if:true={accountRecords} for:each={accountRecords} for:item="account">
+                        <p key={account.Id}>
+                            Account Id: <a href={account.Link} target="_blank">{account.Id}</a> <br />
+                            Account Name: <b>{account.Name}</b> <br />
+                            Account Number: <b>{account.AccountNumber}</b> <br />
+                            Account Phone: <b>{account.Phone}</b> <br />
+                            Annual Revenue: <b>{account.AnnualRevenue}</b> <br />
+                            Account Type: <b>{account.Type}</b> <br />
+                            ---------------
+                        </p>
+                    </template>
+                </lightning-layout-item>
+            </lightning-layout>
+        </div>
+    </lightning-card>
+</template>
